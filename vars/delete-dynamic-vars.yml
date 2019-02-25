@@ -1,0 +1,10 @@
+---
+   state: absent
+   instance_name: from_ansible
+   image: rhel7-ose
+   keypair: undercloud
+   flavor: medium
+   security: default
+   network: provider2
+   
+

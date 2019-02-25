@@ -1,0 +1,21 @@
+---
+   # state indicates we either want to create or delete object
+   state: present
+   # nova instance name
+   instance_name: from_ansible
+   # glance image name
+   image: rhel7-ose
+   # openstack project keypair (should be set to ansible server id_rsa.pub)
+   keypair: playground
+   # Nova flavor for the instance
+   flavor: medium
+   # OpenStack securty group
+   security: default
+   # Neutron Network ( provider network with access to ansible server )
+   network: provider2
+   # Cloud-init user that has been injected to glance image ( defaults: cloud-user for RHEL7, ubuntu for Ubuntu, opensuse for openSUSE)
+   cloud_user: cloud-user 
+   # packages that we want to get installed on created instance
+   packages:
+     - screen
+     - ftp

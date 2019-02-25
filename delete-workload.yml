@@ -1,0 +1,13 @@
+---
+- name: Create workload
+  hosts:
+    - localhost
+
+  vars_files:
+    - vars/static-vars.yml
+    - vars/delete-dynamic-vars.yml
+  
+
+  tasks:
+  roles: 
+    - role: instance

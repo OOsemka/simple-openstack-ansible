@@ -1,0 +1,10 @@
+---
+   # OpenStack Keystone URL
+   os_auth: https://openstack.home.lab:13000/v3
+   # OpenStack project and user
+   project_name: admin
+   # OpenStack user password
+   project_password: Passw0rd
+   # Keystone / LDAP domain
+   domain_id: default
+

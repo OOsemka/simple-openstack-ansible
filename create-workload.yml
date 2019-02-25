@@ -1,0 +1,27 @@
+---
+- name: Create Instance
+  hosts:
+    - localhost
+  vars_files:
+    - vars/static-vars.yml
+    - vars/create-dynamic-vars.yml
+  
+
+  tasks:
+  roles: 
+    - role: instance
+    - role: check-connectivity
+    - role: add-to-inventory
+
+
+- name: Install workload
+  hosts: openstack
+  become: true
+  vars_files:
+    - vars/static-vars.yml
+    - vars/create-dynamic-vars.yml
+
+  tasks:
+  roles:
+    - role: get-repo
+    - role: install-workload 

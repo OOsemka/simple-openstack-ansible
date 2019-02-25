@@ -1,0 +1,5 @@
+---
+- name: get the repo file
+  copy:
+    src: files/local.repo
+    dest: /etc/yum.repos.d/local.repo

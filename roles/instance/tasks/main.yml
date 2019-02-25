@@ -1,0 +1,22 @@
+---
+# tasks file for create-vm
+  - name: handle instance
+    os_server:
+       auth:
+         auth_url: "{{ os_auth }}"
+         username: "{{ project_name }}"
+         password: "{{ project_password }}"
+         project_name: "{{ project_name }}"
+         domain_id: "{{ domain_id }}"
+       state: "{{ state }}"
+       name: "{{ instance_name }}"
+       image: "{{ image }}"
+       key_name: "{{ keypair }}"
+       #timeout: 200
+       flavor: "{{ flavor }}"
+       auto_ip: no
+       security_groups: "{{ security }}"
+       validate_certs: False
+       nics:
+         - net-name: "{{ network }}"
+    register: instance

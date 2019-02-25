@@ -1,0 +1,6 @@
+---
+- name: install workload
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ packages }}"

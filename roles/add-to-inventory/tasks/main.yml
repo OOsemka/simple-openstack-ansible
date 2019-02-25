@@ -1,0 +1,8 @@
+---
+- name: add node to the inventory
+  add_host:
+     name: openstack
+     groups: openstack
+     ansible_host: "{{instance.openstack.accessIPv4}}"
+     ansible_user: "{{ cloud_user }}"
+     ansible_become: yes
