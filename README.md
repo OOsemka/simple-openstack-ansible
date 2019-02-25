@@ -28,5 +28,7 @@ Create with custom variables:
 curl -f -H 'Content-Type: application/json' -XPOST --user admin:<secret> -d '{"extra_vars": "{\"instance_name\": \"from_api\"}"}'   https:///<tower_ip>/api/v2/job_templates/7/launch/ --insecure
 
 
-Please note in my case job_template 7 has been used for create_workload.yml where job_template 8 is for delete_workload.yml
+Please note in my case job_template 7 has been used for create_workload.yml where job_template 8 is for delete_workload.yml.
+You can find out the corresponding job_template id's by crawling through https://<tower_ip>/api/v2/job_templates/
+
 You might also want to enable 'PROMPT ON LAUNCH' for the extra_vars inside the Tower
