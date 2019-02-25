@@ -8,14 +8,17 @@ It is also a good idea to use extra_vars field for dynamic variables rather then
 # Example of launching workloads from tower API
 
 Launch a workload via API:
+
 curl -f -H 'Content-Type: application/json' -XPOST --user admin:<secret>   https://<tower_ip>/api/v2/job_templates/7/launch/ --insecure
 
 
 Delete workload with API:
+
 curl -f -H 'Content-Type: application/json' -XPOST --user admin:<secret> https:///<tower_ip>/api/v2/job_templates/8/launch/ --insecure
 
 
 Create with custom variables:
+
 curl -f -H 'Content-Type: application/json' -XPOST --user admin:<secret> -d '{"extra_vars": "{\"instance_name\": \"from_api\"}"}'   https:///<tower_ip>/api/v2/job_templates/7/launch/ --insecure
 
 
