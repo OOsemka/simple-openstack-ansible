@@ -5,6 +5,12 @@ Simply import it to your ansible server and modify variables under vars/ to matc
 If you use Ansible Tower make sure you set up your credentials that matches a keypair in OpenStack. 
 It is also a good idea to use extra_vars field for dynamic variables rather then yml file. Simply copy the content of vars/create-dynamic-vars.yml into extra_vars field.
 
+# What are the playbooks
+create-workload.yml is a simple playbook that creates an instance and installs a list of packages. Both instance attributes and the list of packages can be set up in :
+ansible/vars/create-dynamic-vars.yml
+
+delete-workload.yml - is a single task playbook that deletes the OpenStack instance .. should be used with the same variables as create-workload.yml
+
 # Example of launching workloads from tower API
 
 Launch a workload via API:
