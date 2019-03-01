@@ -1,0 +1,12 @@
+---
+  - name: learn instance facts
+    os_server_facts:
+       auth:
+         auth_url: "{{ os_auth }}"
+         username: "{{ project_name }}"
+         password: "{{ project_password }}"
+         project_name: "{{ project_name }}"
+         domain_id: "{{ domain_id }}"
+       validate_certs: False
+
+    register: openstack_instances
